@@ -17,6 +17,10 @@ const eventNames = {
  * @private
  */
 function findTransitionEventName() {
+    if (typeof FastBoot !== 'undefined') {
+		return '';
+    }
+
 	const div = document.createElement('div');
 	const key = Object.keys(eventNames).find((eventName) => eventName in div.style);
 
